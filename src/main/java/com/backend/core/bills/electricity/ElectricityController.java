@@ -1,4 +1,4 @@
-package com.backend.core.electricity;
+package com.backend.core.bills.electricity;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
