@@ -1,4 +1,4 @@
-package com.backend.core.waterbill;
+package com.backend.core.bills.water;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WaterBillControler {
 
-	@RequestMapping("/ledger/waterbill")
+	@RequestMapping("/ledger/water")
 	public List<WaterBill> getWaterBill() {
 		return Arrays.asList(
 				new WaterBill("2018.07.10","Rs 750","Bill 1"),

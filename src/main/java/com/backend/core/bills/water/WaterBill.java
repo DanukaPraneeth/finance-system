@@ -1,4 +1,4 @@
-package com.backend.core.waterbill;
+package com.backend.core.bills.water;
 
 public class WaterBill {
 	private String date;
