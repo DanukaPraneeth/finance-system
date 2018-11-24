@@ -1,7 +1,13 @@
 package com.backend.core.bills.water;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class WaterBills {
 
+    @Id
+    private int billNo;
     private String period;
     private int previousReading;
     private int currentReading;
@@ -13,9 +19,16 @@ public class WaterBills {
     private int traineeStaffId;
     private int userKey;
 
-    public WaterBills(String period, int previousReading, int currentReading, int noOfUnits,
+
+    public WaterBills(){
+
+    }
+
+    public WaterBills(int billNo, String period, int previousReading, int currentReading, int noOfUnits,
                       float amount, String certification, String certifiedDate,
                         String datetime, int traineeStaffId, int userKey) {
+        super();
+        this.billNo=billNo;
         this.period = period;
         this.previousReading = previousReading;
         this.currentReading = currentReading;
@@ -27,6 +40,10 @@ public class WaterBills {
         this.traineeStaffId = traineeStaffId;
         this.userKey = userKey;
     }
+
+    public int getBillNo() { return billNo; }
+
+    public void setBillNo(int billNo) { this.billNo = billNo;  }
 
     public String getPeriod() {
         return period;

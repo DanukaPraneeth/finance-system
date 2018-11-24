@@ -1,14 +1,25 @@
 package com.backend.core.users;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Staff {
 
+    @Id
     private int userKey;
     private String name;
     private String password;
     private String saltValue;
     private int role;
 
+    public Staff(){
+
+    }
+
     public Staff(int userKey, String name, String password, String saltValue, int role) {
+        super();
         this.userKey = userKey;
         this.name = name;
         this.password = password;
