@@ -1,46 +1,47 @@
 package com.backend.core.users;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
+@Table (name = "staff")
 public class Staff {
+//@SequenceGenerator(name="seq", initialValue=20, allocationSize=9999999, sequenceName = "SEQ")
 
     @Id
-    private int userKey;
-    private String name;
+    @Column(nullable = false, unique = true)
+    private Integer userKey;
+    @Column(nullable = false, unique = true)
+    private String userName;
     private String password;
-    private String saltValue;
-    private int role;
+    private int userRole;
 
     public Staff(){
 
     }
 
-    public Staff(int userKey, String name, String password, String saltValue, int role) {
+    public Staff( Integer userKey, String userName, String password, int userRole) {
         super();
         this.userKey = userKey;
-        this.name = name;
+        this.userName = userName;
         this.password = password;
-        this.saltValue = saltValue;
-        this.role = role;
+        this.userRole = userRole;
     }
 
-    public int getUserKey() {
+    public Integer getUserKey() {
         return userKey;
     }
 
-    public void setUserKey(int userKey) {
+    public void setUserKey(Integer userKey) {
         this.userKey = userKey;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -51,19 +52,15 @@ public class Staff {
         this.password = password;
     }
 
-    public String getSaltValue() {
-        return saltValue;
+    public int getUserRole() {
+        return userRole;
     }
 
-    public void setSaltValue(String saltValue) {
-        this.saltValue = saltValue;
+    public void setUserRole(int userRole) {
+        this.userRole = userRole;
     }
 
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
+    public String toString(){
+        return userKey +", "+ userName +", "+password +", "+ userRole;
     }
 }
